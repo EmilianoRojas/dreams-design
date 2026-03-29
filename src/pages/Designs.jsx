@@ -83,7 +83,7 @@ export default function Designs() {
                   <div className="text-right">
                     {d.sale_price != null ? (
                       <>
-                        <div className="font-bold text-gray-800">€{parseFloat(d.sale_price).toFixed(2)}</div>
+                        <div className="font-bold text-gray-800">${parseFloat(d.sale_price).toFixed(2)}</div>
                         {margin != null && (
                           <div className={`text-xs font-medium ${parseFloat(margin) >= 0 ? 'text-green-500' : 'text-red-500'}`}>
                             {margin}% margen
@@ -99,23 +99,23 @@ export default function Designs() {
                 <div className="mt-3 pt-3 border-t border-gray-50 flex gap-4 flex-wrap">
                   <div>
                     <div className="text-xs text-gray-400">Materiales</div>
-                    <div className="text-sm font-medium text-gray-700">€{matCost.toFixed(2)}</div>
+                    <div className="text-sm font-medium text-gray-700">${matCost.toFixed(2)}</div>
                   </div>
                   {(d.labor_cost ?? 0) > 0 && (
                     <div>
                       <div className="text-xs text-gray-400">Mano de obra</div>
-                      <div className="text-sm font-medium text-gray-700">€{parseFloat(d.labor_cost).toFixed(2)}</div>
+                      <div className="text-sm font-medium text-gray-700">${parseFloat(d.labor_cost).toFixed(2)}</div>
                     </div>
                   )}
                   <div>
                     <div className="text-xs text-gray-400">Costo total</div>
-                    <div className="text-sm font-medium text-gray-700">€{cost.toFixed(2)}</div>
+                    <div className="text-sm font-medium text-gray-700">${cost.toFixed(2)}</div>
                   </div>
                   {profit != null && (
                     <div>
                       <div className="text-xs text-gray-400">Ganancia</div>
                       <div className={`text-sm font-medium ${profit >= 0 ? 'text-green-600' : 'text-red-500'}`}>
-                        €{profit.toFixed(2)}
+                        ${profit.toFixed(2)}
                       </div>
                     </div>
                   )}

@@ -212,7 +212,7 @@ export default function DesignEditor() {
                 <option value="">Seleccionar material...</option>
                 {availableMaterials.map(m => (
                   <option key={m.id} value={m.id}>
-                    {m.name} (€{parseFloat(m.cost_per_unit).toFixed(4)}/{m.unit})
+                    {m.name} (${parseFloat(m.cost_per_unit).toFixed(4)}/{m.unit})
                   </option>
                 ))}
               </select>
@@ -251,7 +251,7 @@ export default function DesignEditor() {
                   <div key={dm.material_id} className="flex items-center gap-2">
                     <div className="flex-1 min-w-0">
                       <div className="text-sm font-medium text-gray-700 truncate">{dm.material?.name}</div>
-                      <div className="text-xs text-rose-400">€{lineCost.toFixed(4)}</div>
+                      <div className="text-xs text-rose-400">${lineCost.toFixed(4)}</div>
                     </div>
                     <div className="flex items-center gap-1 shrink-0">
                       <input
@@ -280,7 +280,7 @@ export default function DesignEditor() {
           <h2 className="font-semibold text-gray-800 text-sm">Costos y precio</h2>
 
           <div>
-            <label className="text-xs font-medium text-gray-600 block mb-1">Mano de obra (€)</label>
+            <label className="text-xs font-medium text-gray-600 block mb-1">Mano de obra ($)</label>
             <input
               type="number"
               step="0.01"
@@ -295,20 +295,20 @@ export default function DesignEditor() {
           <div className="bg-gray-50 rounded-xl p-3 space-y-1.5">
             <div className="flex justify-between text-xs text-gray-500">
               <span>Materiales</span>
-              <span>€{materialCost.toFixed(2)}</span>
+              <span>${materialCost.toFixed(2)}</span>
             </div>
             <div className="flex justify-between text-xs text-gray-500">
               <span>Mano de obra</span>
-              <span>€{labor.toFixed(2)}</span>
+              <span>${labor.toFixed(2)}</span>
             </div>
             <div className="flex justify-between text-sm font-bold text-gray-700 pt-1.5 border-t border-gray-200">
               <span>Costo total</span>
-              <span>€{totalCost.toFixed(2)}</span>
+              <span>${totalCost.toFixed(2)}</span>
             </div>
           </div>
 
           <div>
-            <label className="text-xs font-medium text-gray-600 block mb-1">Precio de venta (€)</label>
+            <label className="text-xs font-medium text-gray-600 block mb-1">Precio de venta ($)</label>
             <input
               type="number"
               step="0.01"
@@ -326,7 +326,7 @@ export default function DesignEditor() {
                 <div>
                   <div className="text-xs text-gray-500 mb-0.5">Ganancia</div>
                   <div className={`text-2xl font-bold ${profit >= 0 ? 'text-green-600' : 'text-red-500'}`}>
-                    €{profit.toFixed(2)}
+                    ${profit.toFixed(2)}
                   </div>
                 </div>
                 <div className="text-right">

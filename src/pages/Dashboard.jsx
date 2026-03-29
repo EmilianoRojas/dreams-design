@@ -101,7 +101,7 @@ export default function Dashboard() {
                   </div>
                   <div className="text-right">
                     <div className="text-sm font-semibold text-gray-800">
-                      {d.sale_price != null ? `€${parseFloat(d.sale_price).toFixed(2)}` : '—'}
+                      {d.sale_price != null ? `$${parseFloat(d.sale_price).toFixed(2)}` : '—'}
                     </div>
                     {margin != null && (
                       <div className={`text-xs ${parseFloat(margin) >= 0 ? 'text-green-500' : 'text-red-500'}`}>

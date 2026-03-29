@@ -29,11 +29,11 @@ function MaterialCard({ m, onEdit, onDelete }) {
         </div>
         <div className="text-right ml-3 shrink-0">
           <div className="text-sm font-semibold text-gray-800">
-            €{parseFloat(m.cost_per_unit).toFixed(4)}
+            ${parseFloat(m.cost_per_unit).toFixed(4)}
             <span className="text-gray-400 font-normal">/{m.unit}</span>
           </div>
           {costPerM && (
-            <div className="text-xs text-rose-400">€{costPerM}/metro</div>
+            <div className="text-xs text-rose-400">${costPerM}/metro</div>
           )}
           <div className={`text-xs mt-0.5 font-medium ${parseFloat(m.stock_quantity) < 5 ? 'text-orange-500' : 'text-green-500'}`}>
             {m.stock_quantity} {m.unit}
@@ -226,7 +226,7 @@ export default function Stock() {
           <div className="grid grid-cols-2 gap-3">
             <div>
               <label className="text-xs font-medium text-gray-600 block mb-1">
-                Costo por {form.unit} (€)
+                Costo por {form.unit} ($)
               </label>
               <input
                 type="number"
@@ -240,7 +240,7 @@ export default function Stock() {
               {/* Show price/metro preview for cm */}
               {form.unit === 'cm' && form.cost_per_unit > 0 && (
                 <div className="text-xs text-rose-400 mt-1">
-                  = €{(parseFloat(form.cost_per_unit) * 100).toFixed(4)}/metro
+                  = ${(parseFloat(form.cost_per_unit) * 100).toFixed(4)}/metro
                 </div>
               )}
             </div>
